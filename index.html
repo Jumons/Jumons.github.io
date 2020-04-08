@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Test Game</title>
+<script type="text/JavaScript">
+
+// ブラウザバージョンセット
+var brver;	// ブラウザのバージョン
+var NN6;	// NN6.0以上なら true
+var IE5;	// IE5.0以上なら true
+brver = eval(0 + navigator.appVersion.charAt(0));
+NN6   = (brver >= 5 && navigator.appName=="Netscape");
+IE5   = (brver >= 4 && navigator.userAgent.indexOf("MSIE")!=-1);
+
+</script>
+<script type="text/javascript" src="game.js"></script>
+</head>
+
+<body>
+<!-- 壁 -->
+<div id="lyrwall">
+<!--     style="position:absolute; left:16px; top:16px;">-->
+<img src=bb002.gif><br><br>
+<a href="JavaScript:gameStart()">[スタート]</a>
+</div>
+
+<!-- ボール -->
+<div id="lyrball"><!-- style="position: absolute; left: 144px; top: 144px;">-->
+<img src="bb001.gif">
+</div>
+
+<!-- バー -->
+<div id="lyrbar">
+<!--     style="position:absolute; left:120px; top:264px;">-->
+<img src=bb003.gif>
+</div>
+
+<!-- ブロックレイヤー -->
+<template id="btemplate">
+<div class="blocks">
+<img src="" alt="">
+</div>
+</template>
+
+</body>
+</html>
