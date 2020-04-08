@@ -52,7 +52,7 @@ window.onload = function() {
 			// classで項目を特定しIDを付ける
 			objDiv.setAttribute("id", "lyrblock" + num);
 
-			template.content.querySelector('img').src = 'bb00' + (4+bw) + '.gif';
+			template.content.querySelector('img').src = 'img/bb00' + (4+bw) + '.gif';
 
 			var temp1 = BLOCK_POS + j * (BLOCK_WIDTH + BLOCK_COLS_MARGIN);
 			var temp2 = BLOCK_POS + i * (BLOCK_HEIGHT + BLOCK_ROWS_MARGIN);
