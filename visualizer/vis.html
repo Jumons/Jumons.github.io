@@ -5,38 +5,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Graph Visualizer</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../index.css">
-  <script type="text/javascript" src="./vis.js"></script>
   <link rel="stylesheet" type="text/css" href="./vis.css">
+  <script type="text/javascript" src="./vis.js"></script>
 </head>
 <body>
+  <h1>
+    Graph Visualizer
+  </h1>
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-1"></div>
-      <div class="col-sm-1 options">
+      <div class="col-sm-2 options">
         <select class="form-control" id="directivity">
           <option value="undirected" selected="selected">undirected</option>
           <option value="directed">directed</option>
         </select>
       </div>
-      <div class="col-sm-1 options">
+      <div class="col-sm-2 options">
         <select class="form-control" id="weighted">
           <option value="unweighted" selected="selected">unweighted</option>
           <option value="weighted">weighted</option>
         </select>
       </div>
-      <div class="col-sm-1 options">
+      <div class="col-sm-2 options">
         <select class="form-control" id="labeled">
           <option value="unlabeled" selected="selected">unlabeled</option>
           <option value="labeled">labeled</option>
         </select>
       </div>
-      <div class="col-sm-1 options">
+      <div class="col-sm-2 options">
         <select class="form-control" id="indexed">
           <option value="1-index" selected="selected">1-index</option>
           <option value="0-index">0-index</option>
