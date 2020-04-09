@@ -1,17 +1,20 @@
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    let file = document.querySelector('#getfile');
-    let info = '1 0';
-    file.onchange = function() {
-        var fileList = file.files;
+    let inputFile = document.querySelector('#getfile');
+    let inputText = document.querySelector('#inputText');
+    inputText.textContent = '1 0';
+
+    inputFile.onchange = function() {
+        var fileList = inputFile.files;
         //読み込み
         var reader = new FileReader();
         reader.readAsText(fileList[0]);
 
         //読み込み後
         reader.onload = function  () {
-            info = reader.result;
+            inputText.textContent = reader.result;
+            graph.update();
         };
     };
 
