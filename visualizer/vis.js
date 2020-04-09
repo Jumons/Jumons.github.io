@@ -20,19 +20,19 @@ function init() {
 
 
     let nodes = new vis.DataSet([
-        {id: 1,  label: '1',  group: 1},
+        {id: 1,  label: '1',  group: 2},
         {id: 2,  label: '2',  group: 2},
         {id: 3,  label: '3',  group: 1},
-        {id: 4,  label: '4',  group: 1},
-        {id: 5,  label: '5',  group: 1},
-        {id: 6,  label: '6',  group: 1},
-        {id: 7,  label: '7',  group: 2},
-        {id: 8,  label: '8',  group: 2},
+        {id: 4,  label: '4',  group: 2},
+        {id: 5,  label: '5',  group: 2},
+        {id: 6,  label: '6',  group: 2},
+        {id: 7,  label: '7',  group: 1},
+        {id: 8,  label: '8',  group: 1},
         {id: 9,  label: '9',  group: 2},
-        {id: 10, label: '10', group: 2},
-        {id: 11, label: '11', group: 1},
-        {id: 12, label: '12', group: 1},
-        {id: 13, label: '13', group: 2},
+        {id: 10, label: '10', group: 1},
+        {id: 11, label: '11', group: 2},
+        {id: 12, label: '12', group: 2},
+        {id: 13, label: '13', group: 1},
     ]);
 
     let edges = new vis.DataSet([

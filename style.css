@@ -1,7 +1,4 @@
 
-a.widelink {
-  display: block;
-}
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -10,6 +7,14 @@ a.widelink {
 }
 
 /* universal */
+
+#header {
+  margin-bottom: 20px;
+}
+
+a.widelink {
+  display: block;
+}
 
 body {
 }

@@ -2,11 +2,20 @@
 <html lang="jp">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script type="text/javascript" src="script.js" defer></script>
   <title>Piano</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <script src="../../template.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+  <script type="text/javascript" src="script.js" defer></script>
 </head>
+
 <body>
+  <div id="header"></div>
+  <script>header('../../');</script>
   <div class="piano">
     <div data-note="C"  class="key white"></div>
     <div data-note="Db" class="key black"></div>
