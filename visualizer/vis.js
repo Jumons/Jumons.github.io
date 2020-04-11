@@ -52,7 +52,7 @@ function visualize() {
 function init() {
     let inputFile = document.querySelector('#getfile');
     let inputText = document.querySelector('#inputText');
-    inputText.value = '2 3\nAB\n1 1 3\n1 2 1\n2 2 4\n';
+    inputText.value = '2 3\nAB\n1 1 3\n1 2 1\n2 2 4';
 
     inputFile.onchange = function() {
         let fileList = inputFile.files;
@@ -66,3 +66,12 @@ function init() {
         };
     };
 }
+
+$(function() {
+  let $textarea = $('#inputText');
+  let lineHeight = parseInt($textarea.css('lineHeight'));
+  $textarea.on('input', function(e) {
+    let lines = ($(this).val() + '\n').match(/\n/g).length;
+    $(this).height(lineHeight * lines);
+  });
+});
