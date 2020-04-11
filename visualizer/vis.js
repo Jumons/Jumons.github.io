@@ -16,7 +16,7 @@ function visualize() {
     // let nodes = new vis.DataSet([...Array(node_num)].map((a,b) => Object({id: b+1, label: String(b+1)})));
     let nodes = [];
     for (var i = 0; i < node_num; i++) {
-        let idx = i + (labeled ? 1 : 0);
+        let idx = i + (one_indexed ? 0 : 1);
         let node = {
             id: idx,
             label: String(idx),
