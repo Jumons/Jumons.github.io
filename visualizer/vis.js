@@ -1,19 +1,39 @@
 window.addEventListener("DOMContentLoaded", init);
 
 function visualize() {
+    let directed    = document.querySelector('#directed').value == "directed";
+    let weighted    = document.querySelector('#weighted').value == "weighted";
+    let labeled     = document.querySelector('#labeled').value  == "labeled";
+    let one_indexed = document.querySelector('#indexed').value  == "1-indexed";
+
     let text = document.querySelector('#inputText').value.replace(/\r\n|\r/g, "\n");
-    window.T = text;
+    
     let lines = text.split('\n');
     let node_num = lines[0].split(' ')[0];
     let edge_num = lines[0].split(' ')[1];
-    window.N = node_num;
+    lines = lines.slice(1);
+
     // let nodes = new vis.DataSet([...Array(node_num)].map((a,b) => Object({id: b+1, label: String(b+1)})));
     let nodes = [];
     for (var i = 0; i < node_num; i++) {
-        nodes.push(Object({id: i+1, label: String(i+1)}));
+        let idx = i + (labeled ? 1 : 0);
+        let node = {
+            id: idx,
+            label: String(idx),
+        };
+        if (labeled) node.group = lines[0].split(/ */)[i];
+        nodes.push(node);
     }
     nodes = new vis.DataSet(nodes);
-    let edges = new vis.DataSet(lines.slice(2).map((a,b) => Object({from: a.split(' ')[0], to: a.split(' ')[1], value: a.split(' ')[2]})))
+    if (labeled) lines = lines.slice(1);
+
+    let arrow = directed ? 'to' : 'with';
+    let edges = new vis.DataSet(lines.map((a,b) => Object({
+        from:   a.split(' ')[0],
+        to:     a.split(' ')[1],
+        label:  weighted ? a.split(' ')[2] : '',
+        arrows: arrow,
+    })));
     window.Nodes = nodes;
 
     let container = document.getElementById('myCanvas');
@@ -32,7 +52,7 @@ function visualize() {
 function init() {
     let inputFile = document.querySelector('#getfile');
     let inputText = document.querySelector('#inputText');
-    inputText.textContent = '1 0';
+    inputText.value = '2 3\nAB\n1 1 3\n1 2 1\n2 2 4\n';
 
     inputFile.onchange = function() {
         let fileList = inputFile.files;
