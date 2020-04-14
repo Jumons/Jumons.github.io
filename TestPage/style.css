@@ -101,7 +101,6 @@ main {
     color: var(--text-secondary);
     background: var(--bg-secondary);
     font-size: 1.5rem;
-    text-transform: uppercase;
     letter-spacing: 0.3ch;
     width: 100%;
 }
@@ -112,6 +111,7 @@ main {
 }
 
 .navbar:hover .logo i {
+    margin-left: auto;
     transform: rotate(-180deg);
 }
 
