@@ -6,7 +6,7 @@ function visualize() {
     let labeled     = document.querySelector('#labeled').value  == "labeled";
     let one_indexed = document.querySelector('#indexed').value  == "1-indexed";
 
-    let text = document.querySelector('#inputText').value.replace(/\r\n|\r/g, "\n");
+    let text = document.querySelector('#input-text').value.replace(/\r\n|\r/g, "\n");
     
     let lines = text.split('\n');
     let node_num = lines[0].split(' ')[0];
@@ -36,7 +36,7 @@ function visualize() {
     })));
     window.Nodes = nodes;
 
-    let container = document.getElementById('myCanvas');
+    let container = document.querySelector('#my-canvas');
 
     let data = {
         nodes: nodes,
@@ -46,12 +46,12 @@ function visualize() {
     let options = {
     };
 
-    window.myCanvas = new vis.Network(container, data, options);
+    let myCanvas = new vis.Network(container, data, options);
 }
 
 function init() {
     let inputFile = document.querySelector('#getfile');
-    let inputText = document.querySelector('#inputText');
+    let inputText = document.querySelector('#input-text');
     inputText.value = '2 3\nAB\n1 1 3\n1 2 1\n2 2 4';
 
     inputFile.onchange = function() {
@@ -69,10 +69,10 @@ function init() {
 
 // textareaの高さを内部の文の行数に合わせる
 $(function() {
-  let $textarea = $('#inputText');
-  let lineHeight = parseInt($textarea.css('lineHeight'));
-  $textarea.on('input', function(e) {
-    let lines = ($(this).val() + '\n').match(/\n/g).length;
-    $(this).height(lineHeight * lines);
-  });
+      let $textarea = $('#input-text');
+      let lineHeight = parseInt($textarea.css('lineHeight'));
+      $textarea.on('input', function(e) {
+            let lines = ($(this).val() + '\n').match(/\n/g).length;
+            $(this).height(lineHeight * lines);
+      });
 });
