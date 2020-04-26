@@ -16,9 +16,24 @@ function init() {
             inputText.value = reader.result;
         };
     };
+    update();
 }
 
 function update() {
+    let container = document.getElementById('myCanvas');
+
+    let text = document.querySelector('#inputText').value.replace(/\r\n|\r/g, "\n");
+    let lines = text.split('\n');
+    for (let line of lines) {
+      let row = document.createElement('tr');
+      for (let ch of line) {
+        let cell = document.createElement('td');
+        cell.classList.add('cell');
+        if (ch == '#') cell.classList.add('obstacle');
+        row.appendChild(cell);
+      }
+      container.appendChild(row)
+    }
 }
 
 // textareaの高さを内部の文の行数に合わせる
