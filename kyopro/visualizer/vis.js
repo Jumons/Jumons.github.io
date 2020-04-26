@@ -67,6 +67,7 @@ function init() {
     };
 }
 
+// textareaの高さを内部の文の行数に合わせる
 $(function() {
   let $textarea = $('#inputText');
   let lineHeight = parseInt($textarea.css('lineHeight'));
